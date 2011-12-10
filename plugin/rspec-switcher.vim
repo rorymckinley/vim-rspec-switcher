@@ -11,5 +11,5 @@ if !exists("g:rspecswitcherRspecExecutable")
   let g:rspecswitcherRspecExecutable = RspecSwitcherFindBinary()
 endif
 
-nnoremap ,s :exec "!clear; bundle exec " . g:rspecswitcherRspecExecutable . " -cfs %:".line(".")<CR>
-nnoremap ,S :exec "!clear; bundle exec " . g:rspecswitcherRspecExecutable . " -cfs %"<CR>
+nnoremap <leader>s :exec "!clear; bundle exec " . g:rspecswitcherRspecExecutable . " -cfs " . bufname("%") . ":" . line(".")<CR>
+nnoremap <leader>S :exec "!clear; bundle exec " . g:rspecswitcherRspecExecutable . " -cfs " . bufname("%")<CR>
